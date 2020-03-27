@@ -10,19 +10,14 @@ import java.util.Date;
 public class User implements Serializable{
 
 //我来改一改，111
-    //999
+    //888
     private Long id;
-
     private String name;
-
-
-
     private Integer age;//555
     private Float grade;
-
     private Date birthday;
 
-//pp123
+//pp123456
 ////00045
     public User() {
     }
