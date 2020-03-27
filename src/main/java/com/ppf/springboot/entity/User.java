@@ -19,7 +19,9 @@ public class User implements Serializable{
 
     private Integer age;//555
     private Float grade;
+
     private Date birthday;
+
 //pp123
 ////00045
     public User() {
