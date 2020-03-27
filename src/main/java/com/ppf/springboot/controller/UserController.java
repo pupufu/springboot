@@ -17,7 +17,7 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {
+public class UserController {//123
 
     //测试git上传123
     @Autowired
