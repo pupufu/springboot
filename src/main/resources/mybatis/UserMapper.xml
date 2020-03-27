@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.ppf.springboot.mapper.UserMapper" >
+
+    <resultMap id="BaseResultMap" type="com.ppf.springboot.entity.User" >
+        <id column="id" property="id" jdbcType="BIGINT" />
+        <result column="name" property="name" jdbcType="VARCHAR" />
+        <result column="age" property="age" jdbcType="DATE" />
+        <result column="grade" property="grade" jdbcType="FLOAT" />
+        <result column="birthday" property="birthday" jdbcType="DATE" />
+    </resultMap>
+
+    <select id="findAll" resultMap="BaseResultMap" >
+        select * from user
+    </select>
+
+    <select id="findUserByNameAndAge"  parameterType="com.ppf.springboot.entity.User" resultMap="BaseResultMap" >
+        select * from user where name=#{user.name} and age=#{user.age}
+    </select>
+
+    <select id="findUserByName"  parameterType="java.lang.String" resultMap="BaseResultMap" >
+        select * from user where name=#{name}
+    </select>
+
+    <insert id="addUser" parameterType="com.ppf.springboot.entity.User" useGeneratedKeys="true" keyProperty="id">
+        insert into user(name,age,grade,birthday) values (#{name},#{age},#{grade},#{birthday})
+    </insert>
+</mapper>
