@@ -14,14 +14,16 @@ public class User implements Serializable{
     private Long id;
     private String name;
     private Integer age;//555
-    private Float grade;//777
-    private Date birthday;
 
+    private Float grade;//777
+
+    private Date birthday;
+//dsa
 //pp123456
 ////00045
     public User() {
     }
-
+//88
 
     public Long getId() {
         return id;
