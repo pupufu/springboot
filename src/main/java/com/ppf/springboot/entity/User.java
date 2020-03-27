@@ -12,12 +12,16 @@ public class User implements Serializable{
 //我来改一改，111
     //999
     private Long id;
+
     private String name;
-    private Integer age;
+
+
+
+    private Integer age;//555
     private Float grade;
     private Date birthday;
 //pp123
-//000
+////00045
     public User() {
     }
 
@@ -25,7 +29,7 @@ public class User implements Serializable{
     public Long getId() {
         return id;
     }
-
+//
     public void setId(Long id) {
         this.id = id;
     }
