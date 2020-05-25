@@ -1,12 +1,9 @@
 package com.ppf.springboot.controller;
 
-import com.ppf.springboot.service.com.ppf.service.impl.ThreadServiceImpl;
-import com.ppf.springboot.untis.ThreadUntis.ThreadUntil;
+import com.ppf.springboot.service.impl.ThreadServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import java.util.concurrent.ExecutionException;
 
 @RestController
 @RequestMapping("/thread")

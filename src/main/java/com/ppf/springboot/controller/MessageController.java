@@ -17,7 +17,7 @@ public class MessageController {
         DataMessage DataMessage = new DataMessage();
         Method method = null;
         try {
-            method = UserController.class.getMethod("addUser", User.class);
+            method = UserController.class.getMethod("getUserList");
         } catch (NoSuchMethodException e) {
             e.printStackTrace();
         }

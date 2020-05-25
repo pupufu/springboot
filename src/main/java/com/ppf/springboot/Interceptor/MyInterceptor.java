@@ -28,7 +28,6 @@ public  class MyInterceptor extends HandlerInterceptorAdapter {
             return true;
         }
 
-
         return true;
     }
 

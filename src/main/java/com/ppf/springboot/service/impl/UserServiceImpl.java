@@ -1,4 +1,4 @@
-package com.ppf.springboot.service.com.ppf.service.impl;
+package com.ppf.springboot.service.impl;
 
 import com.ppf.springboot.entity.User;
 import com.ppf.springboot.mapper.UserMapper;
@@ -16,6 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Autowired
     UserMapper userMapper;
+
     @Override
     public List<User> getUserList() {
         return userMapper.findAll();
@@ -36,5 +37,13 @@ public class UserServiceImpl implements UserService {
         userMapper.addUser(user);
     }
 
+    @Override
+    public List<User> queryByParams(int currentPage, int pageSize, User user) {
 
+
+        List<User> userList = userMapper.queryByParams(user);
+        List<User> subList = userList.subList((currentPage - 1) * pageSize, currentPage * pageSize);
+        return subList;
+
+    }
 }

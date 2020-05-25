@@ -1,4 +1,4 @@
-package com.ppf.springboot.service.com.ppf.service.impl;
+package com.ppf.springboot.service.impl;
 
 import org.springframework.stereotype.Service;
 

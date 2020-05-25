@@ -1,5 +1,6 @@
 package com.ppf.springboot.config;
 
+import com.ppf.springboot.annotation.MyListener;
 import com.ppf.springboot.listener.InterfaceListener;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -36,5 +37,6 @@ public class SpringMVCConfig implements WebMvcConfigurer {
     public InterfaceListener interfaceListener() {
         return new InterfaceListener();
     }
+
 
 }

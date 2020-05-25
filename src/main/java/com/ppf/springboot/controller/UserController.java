@@ -17,13 +17,13 @@ import java.util.List;
 
 @Controller
 @RequestMapping("/user")
-public class UserController {//123
+public class UserController {
 
     //测试git上传123
     @Autowired
     UserService userService;
 
-
+    @MyListener
     @PostMapping("/addUser")
     @ResponseBody
     public Object addUser(){
@@ -53,6 +53,7 @@ public class UserController {//123
 
 
 
+    @MyListener
     @GetMapping("/userlist")
     @ResponseBody
     public List<User> getUserList() {
@@ -71,5 +72,13 @@ public class UserController {//123
         System.out.println("456中获得的username：" + username);
         return username;
     }
+
+    @ResponseBody
+    @PostMapping("/query")
+    public List<User> queryByParams(int currentPage,int pageSize,User user){
+        List<User> list = userService.queryByParams(currentPage, pageSize, user);
+        return list;
+    }
+
 
 }

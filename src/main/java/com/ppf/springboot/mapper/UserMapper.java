@@ -21,4 +21,6 @@ public interface UserMapper {
     List<User> findUserByName(String name);
 
     void addUser(User user);
+
+    List<User> queryByParams(User user);
 }

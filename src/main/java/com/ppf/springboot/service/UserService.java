@@ -14,4 +14,6 @@ public interface UserService {
     List<User> findUserByName(String name);
 
     void addUser(User user);
+
+    List<User> queryByParams(int currentPage, int pageSize, User user);
 }
