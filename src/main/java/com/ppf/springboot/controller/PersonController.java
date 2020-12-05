@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 @Controller
@@ -29,10 +30,5 @@ public class PersonController {
 
     }
 
-    @ResponseBody
-    @GetMapping("query/{name}")
-    public List<User> findUserByName(@PathVariable("name") String name) {
-        return userService.findUserByName(name);
 
-    }
 }

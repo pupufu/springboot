@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.List;
 
@@ -26,7 +27,7 @@ public class UserController {
     @MyListener
     @PostMapping("/addUser")
     @ResponseBody
-    public Object addUser(){
+    public Object addUser() {
         System.out.println("我进来了~~~~~~~~~~~~~~~~~~");
 //        System.out.println("获取用户名称：" + user.getName());
 //        System.out.println("获取用户年龄：" + user.getAge());
@@ -52,7 +53,6 @@ public class UserController {
 //    }
 
 
-
     @MyListener
     @GetMapping("/userlist")
     @ResponseBody
@@ -62,6 +62,15 @@ public class UserController {
         System.out.println(userList);
         return userList;
     }
+
+
+    @GetMapping("/query/username")
+    @ResponseBody
+    public User getUserByName( String name) {
+        User user = userService.getUsername(name);
+        return user;
+    }
+
 
     @ResponseBody
     @RequestMapping("/456")
@@ -75,10 +84,17 @@ public class UserController {
 
     @ResponseBody
     @PostMapping("/query")
-    public List<User> queryByParams(int currentPage,int pageSize,User user){
+    public List<User> queryByParams(int currentPage, int pageSize, User user) {
         List<User> list = userService.queryByParams(currentPage, pageSize, user);
         return list;
     }
 
+
+    @ResponseBody
+    @GetMapping("queryAge/{age}")
+    public List<User> findUserByName(@PathVariable("age") Integer age) {
+        return userService.findUserByAge(age);
+
+    }
 
 }

@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.servlet.ServletContext;
+import java.math.BigDecimal;
 import java.util.List;
 
 @Service
@@ -35,6 +36,16 @@ public class UserServiceImpl implements UserService {
     @Override
     public void addUser(User user) {
         userMapper.addUser(user);
+    }
+
+    @Override
+    public List<User> findUserByAge(Integer age) {
+        return userMapper.findUserByAge(age);
+    }
+
+    @Override
+    public User getUsername(String name) {
+        return userMapper.getUsername(name);
     }
 
     @Override

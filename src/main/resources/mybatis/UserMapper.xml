@@ -45,4 +45,12 @@
     <insert id="addUser" parameterType="com.ppf.springboot.entity.User" useGeneratedKeys="true" keyProperty="id">
         insert into user(name,age,grade,birthday) values (#{name},#{age},#{grade},#{birthday})
     </insert>
+
+    <select id="getUsername" parameterType="java.lang.String" resultMap="BaseResultMap">
+        select * from user where name=#{name}
+    </select>
+
+    <select id="findUserByAge" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+        select * from user where age=#{age}
+    </select>
 </mapper>
